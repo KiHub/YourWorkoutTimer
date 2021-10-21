@@ -41,12 +41,14 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         choiseWorkTime()
         choiseRestTime()
         choiseRepeatTime()
-        //self.workTextField.tintColor = .clear
+       
         
         
         
         
     }
+    
+    
     
     func choiseWorkTime()  {
         let workPicker = UIPickerView()
@@ -58,6 +60,8 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         
         
     }
+    
+    
     func choiseRestTime()  {
         let restPicker = UIPickerView()
         restPicker.delegate = self
@@ -169,6 +173,8 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
 //            workTextField.text = selectedRestTime
 //        }
    }
+    
+   
 
     @IBAction func startButton(_ sender: UIButton) {
     }
