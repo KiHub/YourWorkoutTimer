@@ -21,7 +21,7 @@
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="work" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="n0n-SR-NKU">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="44"/>
-                                        <color key="backgroundColor" red="0.18823529411764706" green="0.26666666666666666" blue="0.30588235294117649" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.18823529410000001" green="0.2666666667" blue="0.30588235289999999" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="25"/>
                                         <textInputTraits key="textInputTraits" keyboardType="numberPad" keyboardAppearance="alert" returnKeyType="go"/>
@@ -42,6 +42,12 @@
                                     </textField>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="41p-6V-WXS" userLabel="startButton">
+                                <rect key="frame" x="157" y="668" width="100" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="70"/>
+                                <state key="normal" image="GroupStartTimer"/>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="0.13333333333333333" green="0.20392156862745098" blue="0.23529411764705882" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>
@@ -55,7 +61,77 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="137.68115942028987" y="103.79464285714285"/>
+            <point key="canvasLocation" x="55" y="79"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="MyM-4l-eay">
+            <objects>
+                <viewController id="Fqy-Sq-4Vc" customClass="ViewController" customModule="YourWorkoutTimer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="UIa-9E-OsU">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9He-iJ-vUL" userLabel="pauseButton">
+                                <rect key="frame" x="157" y="668" width="100" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="70"/>
+                                <state key="normal" image="Pause"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QFL-ue-iOJ" userLabel="backButton">
+                                <rect key="frame" x="79" y="683" width="70" height="70"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="70"/>
+                                <state key="normal" image="Back"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o6p-6O-hHm" userLabel="restartButton">
+                                <rect key="frame" x="265" y="683" width="70" height="70"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="70"/>
+                                <state key="normal" image="Restart"/>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="ff7-ED-SM7"/>
+                        <color key="backgroundColor" red="0.1333333333" green="0.20392156859999999" blue="0.23529411759999999" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xPl-sd-37V" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="829" y="72"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="3Xp-aX-vFv">
+            <objects>
+                <viewController id="ZbG-PV-Jgt" customClass="ViewController" customModule="YourWorkoutTimer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="84J-7n-jRG">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M54-3K-XeF" userLabel="repeatButton">
+                                <rect key="frame" x="157" y="668" width="100" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="70"/>
+                                <state key="normal" image="Restart"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bXX-ZQ-Udm">
+                                <rect key="frame" x="82" y="323" width="250" height="250"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="anticlockwiseDoneIcon"/>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="tBs-B9-t6A"/>
+                        <color key="backgroundColor" red="0.1333333333" green="0.20392156859999999" blue="0.23529411759999999" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6YM-lD-Gbr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1596" y="72"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Back" width="42" height="24"/>
+        <image name="GroupStartTimer" width="242" height="242"/>
+        <image name="Pause" width="58" height="96"/>
+        <image name="Restart" width="96" height="96"/>
+        <image name="anticlockwiseDoneIcon" width="400" height="400"/>
+    </resources>
 </document>
