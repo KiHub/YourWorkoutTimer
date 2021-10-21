@@ -41,9 +41,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         choiseWorkTime()
         choiseRestTime()
         choiseRepeatTime()
-        
-        
-        
+        //self.workTextField.tintColor = .clear
         
         
         
@@ -56,7 +54,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         workTextField.inputView = workPicker
         workPicker.tag = 1
         workPicker.layer.backgroundColor = #colorLiteral(red: 0.1882352941, green: 0.2666666667, blue: 0.3058823529, alpha: 1)
-       
+        self.workTextField.tintColor = .clear
         
         
     }
@@ -66,7 +64,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         restTextField.inputView = restPicker
         restPicker.tag = 2
         restPicker.layer.backgroundColor = #colorLiteral(red: 0.1882352941, green: 0.2666666667, blue: 0.3058823529, alpha: 1)
-        
+        self.restTextField.tintColor = .clear
     }
     
     func choiseRepeatTime()  {
@@ -75,6 +73,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         repeatTextField.inputView = repeatPicker
         repeatPicker.tag = 3
         repeatPicker.layer.backgroundColor = #colorLiteral(red: 0.1882352941, green: 0.2666666667, blue: 0.3058823529, alpha: 1)
+        self.restTextField.tintColor = .clear
     }
 
     func changeColors() {
