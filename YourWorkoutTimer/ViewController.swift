@@ -13,47 +13,14 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     
     
     var timeArray = ["10s", "20s", "30s", "40s", "50s" , "1m", "2m", "3m", "4m", "5m"]
+    var timeArrayForWork = ["10s", "20s", "30s", "40s", "50s" , "1m", "2m", "3m", "4m", "5m"]
     var repeatTimes = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15"]
     
-    var selectedElement: String?
+    var selectedWorkTime: String?
+    var selectedRestTime: String?
+    var selectedRepeatTime: String?
     
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-      // var one = timeArray
-       return 1
-   }
-   
-   func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-       
-       if pickerView.tag == 3 {
-        return repeatTimes.count
-       } else {
-        return timeArray.count
-       }
-       
-//        switch pickerView.tag {
-//        case 1:
-//            return timeArray.
-//        case 2:
-//            return timeArray.count
-//        case 3:
-//            return repeatTimes.count
-//        default:
-//            return 1
-//        }
-   }
-   
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-       
-       if pickerView.tag == 3 {
-           return repeatTimes[row]
-       } else {
-           return timeArray[row]
-       }
-   }
-   
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-       //
-   }
+    
     
     
     
@@ -80,6 +47,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         
         
         
+        
     }
     
     func choiseWorkTime()  {
@@ -87,7 +55,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         workPicker.delegate = self
         workTextField.inputView = workPicker
         workPicker.tag = 1
-        workPicker.layer.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        workPicker.layer.backgroundColor = #colorLiteral(red: 0.1882352941, green: 0.2666666667, blue: 0.3058823529, alpha: 1)
        
         
         
@@ -97,6 +65,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         restPicker.delegate = self
         restTextField.inputView = restPicker
         restPicker.tag = 2
+        restPicker.layer.backgroundColor = #colorLiteral(red: 0.1882352941, green: 0.2666666667, blue: 0.3058823529, alpha: 1)
         
     }
     
@@ -105,6 +74,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         repeatPicker.delegate = self
         repeatTextField.inputView = repeatPicker
         repeatPicker.tag = 3
+        repeatPicker.layer.backgroundColor = #colorLiteral(red: 0.1882352941, green: 0.2666666667, blue: 0.3058823529, alpha: 1)
     }
 
     func changeColors() {
@@ -116,6 +86,90 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         repeatTextField.attributedPlaceholder = NSAttributedString(string: "Repeat",
                                      attributes: [NSAttributedString.Key.foregroundColor: colorGrey])
     }
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+       return 1
+   }
+   
+   func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+       
+//       if pickerView.tag == 3 {
+//        return repeatTimes.count
+//       } else if pickerView.tag == 2{
+//        return timeArray.count
+//       } else {
+//        return timeArrayForWork.count
+//       }
+       
+        switch pickerView.tag {
+        case 1:
+            return timeArrayForWork.count
+        case 2:
+            return timeArray.count
+        case 3:
+            return repeatTimes.count
+        default:
+            return 1
+        }
+   }
+   
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+       
+//       if pickerView.tag == 3 {
+//           return repeatTimes[row]
+//       } else if pickerView.tag == 2{
+//           return timeArray[row]
+//       } else {
+//        return timeArrayForWork[row]
+//       }
+        
+        switch pickerView.tag {
+        case 1:
+            return timeArrayForWork[row]
+        case 2:
+            return timeArray[row]
+        case 3:
+            return repeatTimes[row]
+        default:
+            return "No data"
+        }
+        
+        
+        
+   }
+   
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        
+        switch pickerView.tag {
+                case 1:
+                    selectedWorkTime = timeArrayForWork[row]
+                    workTextField.text = selectedWorkTime
+                    workTextField.resignFirstResponder()
+                case 2:
+                    selectedRestTime = timeArray[row]
+                    restTextField.text = selectedRestTime
+                    restTextField.resignFirstResponder()
+                case 3:
+                    selectedRepeatTime = repeatTimes[row]
+                    repeatTextField.text = selectedRepeatTime
+                    repeatTextField.resignFirstResponder()
+                default:
+                     return
+                }
+        
+        
+        
+//        if pickerView.tag == 3 {
+//            selectedRepeatTime = repeatTimes[row]
+//            repeatTextField.text = selectedRepeatTime
+//        }  else if pickerView.tag == 2 {
+//            selectedRestTime = timeArray[row]
+//            restTextField.text = selectedRestTime
+//        } else {
+//            selectedWorkTime = timeArrayForWork[row]
+//            workTextField.text = selectedRestTime
+//        }
+   }
 
     @IBAction func startButton(_ sender: UIButton) {
     }
