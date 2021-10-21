@@ -67,6 +67,9 @@
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="70"/>
                                                 <state key="normal" image="GroupStartTimer"/>
+                                                <connections>
+                                                    <action selector="startButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pC4-WE-HHe"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -82,6 +85,11 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="FYL-hJ-26N" secondAttribute="bottom" constant="60" id="xjt-xy-awE"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="repeatTextField" destination="5qx-3j-LzX" id="AaB-cn-BBv"/>
+                        <outlet property="restTextField" destination="vTJ-fz-4Xv" id="Gc6-kp-91N"/>
+                        <outlet property="workTextField" destination="n0n-SR-NKU" id="pGe-Ua-tUD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
