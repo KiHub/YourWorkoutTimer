@@ -16,46 +16,70 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="X7n-0m-XkM">
-                                <rect key="frame" x="20" y="370" width="374" height="156"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="138" translatesAutoresizingMaskIntoConstraints="NO" id="FYL-hJ-26N">
+                                <rect key="frame" x="30" y="104" width="354" height="732"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="work" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="n0n-SR-NKU">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="44"/>
-                                        <color key="backgroundColor" red="0.18823529410000001" green="0.2666666667" blue="0.30588235289999999" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="25"/>
-                                        <textInputTraits key="textInputTraits" keyboardType="numberPad" keyboardAppearance="alert" returnKeyType="go"/>
-                                    </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="rest" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="vTJ-fz-4Xv">
-                                        <rect key="frame" x="0.0" y="56" width="374" height="44"/>
-                                        <color key="backgroundColor" red="0.18823529410000001" green="0.2666666667" blue="0.30588235289999999" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="25"/>
-                                        <textInputTraits key="textInputTraits" keyboardType="numberPad" keyboardAppearance="alert" returnKeyType="go"/>
-                                    </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="repeat" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="5qx-3j-LzX">
-                                        <rect key="frame" x="0.0" y="112" width="374" height="44"/>
-                                        <color key="backgroundColor" red="0.18823529410000001" green="0.2666666667" blue="0.30588235289999999" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="25"/>
-                                        <textInputTraits key="textInputTraits" keyboardType="numberPad" keyboardAppearance="alert" returnKeyType="go"/>
-                                    </textField>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="dQe-wM-jLV">
+                                        <rect key="frame" x="0.0" y="0.0" width="354" height="52.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Let's do it" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Khx-Cp-Pbp">
+                                                <rect key="frame" x="0.0" y="0.0" width="354" height="52.5"/>
+                                                <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="30"/>
+                                                <color key="textColor" red="0.58823529409999997" green="0.65490196079999996" blue="0.68627450980000004" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="X7n-0m-XkM">
+                                        <rect key="frame" x="0.0" y="190.5" width="354" height="303.5"/>
+                                        <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="work" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="n0n-SR-NKU">
+                                                <rect key="frame" x="0.0" y="0.0" width="354" height="93"/>
+                                                <color key="backgroundColor" red="0.18823529410000001" green="0.2666666667" blue="0.30588235289999999" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="25"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="numberPad" keyboardAppearance="alert" returnKeyType="go"/>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="rest" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="vTJ-fz-4Xv">
+                                                <rect key="frame" x="0.0" y="105" width="354" height="93.5"/>
+                                                <color key="backgroundColor" red="0.18823529410000001" green="0.2666666667" blue="0.30588235289999999" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="25"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="numberPad" keyboardAppearance="alert" returnKeyType="go"/>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="repeat" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="5qx-3j-LzX">
+                                                <rect key="frame" x="0.0" y="210.5" width="354" height="93"/>
+                                                <color key="backgroundColor" red="0.18823529410000001" green="0.2666666667" blue="0.30588235289999999" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="25"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="numberPad" keyboardAppearance="alert" returnKeyType="go"/>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleAspectFill" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="9S0-2S-2Qj">
+                                        <rect key="frame" x="0.0" y="632" width="354" height="100"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="41p-6V-WXS" userLabel="startButton">
+                                                <rect key="frame" x="127" y="0.0" width="100" height="100"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="100" id="2h7-Fk-GHe"/>
+                                                    <constraint firstAttribute="height" constant="100" id="O5D-ql-dxr"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="70"/>
+                                                <state key="normal" image="GroupStartTimer"/>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="41p-6V-WXS" userLabel="startButton">
-                                <rect key="frame" x="157" y="668" width="100" height="100"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="70"/>
-                                <state key="normal" image="GroupStartTimer"/>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="0.13333333333333333" green="0.20392156862745098" blue="0.23529411764705882" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="X7n-0m-XkM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="GQ0-wG-VcG"/>
-                            <constraint firstItem="X7n-0m-XkM" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="K7m-te-rbm"/>
-                            <constraint firstItem="X7n-0m-XkM" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="KgP-xT-0oI"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="X7n-0m-XkM" secondAttribute="trailing" constant="20" id="fTm-qY-9s6"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="FYL-hJ-26N" secondAttribute="trailing" constant="30" id="QaR-WS-7El"/>
+                            <constraint firstItem="FYL-hJ-26N" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="60" id="fat-Jx-YYI"/>
+                            <constraint firstItem="FYL-hJ-26N" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="30" id="wJL-8R-1gg"/>
+                            <constraint firstAttribute="bottom" secondItem="FYL-hJ-26N" secondAttribute="bottom" constant="60" id="xjt-xy-awE"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -71,32 +95,56 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9He-iJ-vUL" userLabel="pauseButton">
-                                <rect key="frame" x="157" y="668" width="100" height="100"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bYT-BY-7ZU">
+                                <rect key="frame" x="180.5" y="413" width="53.5" height="70"/>
+                                <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="51"/>
+                                <color key="textColor" red="0.58823529409999997" green="0.65490196079999996" blue="0.68627450980000004" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="4RZ-Bc-itL">
+                                <rect key="frame" x="30" y="706" width="354" height="96"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QFL-ue-iOJ" userLabel="backButton">
+                                        <rect key="frame" x="0.0" y="0.0" width="112.5" height="96"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="70"/>
+                                        <state key="normal" image="Back"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9He-iJ-vUL" userLabel="pauseButton">
+                                        <rect key="frame" x="120.5" y="0.0" width="113" height="96"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="70"/>
+                                        <state key="normal" image="Pause"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o6p-6O-hHm" userLabel="nextButton">
+                                        <rect key="frame" x="241.5" y="0.0" width="112.5" height="96"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="70"/>
+                                        <state key="normal" image="next"/>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="progressBar" translatesAutoresizingMaskIntoConstraints="NO" id="bYt-lc-cNs">
+                                <rect key="frame" x="20" y="348" width="374" height="200"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="70"/>
-                                <state key="normal" image="Pause"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QFL-ue-iOJ" userLabel="backButton">
-                                <rect key="frame" x="79" y="683" width="70" height="70"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="70"/>
-                                <state key="normal" image="Back"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o6p-6O-hHm" userLabel="restartButton">
-                                <rect key="frame" x="265" y="683" width="70" height="70"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="70"/>
-                                <state key="normal" image="Restart"/>
-                            </button>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ff7-ED-SM7"/>
                         <color key="backgroundColor" red="0.1333333333" green="0.20392156859999999" blue="0.23529411759999999" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="ff7-ED-SM7" firstAttribute="bottom" secondItem="4RZ-Bc-itL" secondAttribute="bottom" constant="60" id="I4e-ud-3hi"/>
+                            <constraint firstItem="bYT-BY-7ZU" firstAttribute="centerY" secondItem="UIa-9E-OsU" secondAttribute="centerY" id="Iqs-xQ-kng"/>
+                            <constraint firstItem="ff7-ED-SM7" firstAttribute="trailing" secondItem="4RZ-Bc-itL" secondAttribute="trailing" constant="30" id="VOv-uj-DTR"/>
+                            <constraint firstItem="4RZ-Bc-itL" firstAttribute="leading" secondItem="ff7-ED-SM7" secondAttribute="leading" constant="30" id="j4M-CF-5eN"/>
+                            <constraint firstItem="bYT-BY-7ZU" firstAttribute="centerX" secondItem="UIa-9E-OsU" secondAttribute="centerX" id="tvx-Vn-Y0D"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="bYt-lc-cNs"/>
+                            </mask>
+                        </variation>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xPl-sd-37V" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="829" y="72"/>
+            <point key="canvasLocation" x="828.98550724637687" y="71.651785714285708"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="3Xp-aX-vFv">
@@ -133,5 +181,7 @@
         <image name="Pause" width="58" height="96"/>
         <image name="Restart" width="96" height="96"/>
         <image name="anticlockwiseDoneIcon" width="400" height="400"/>
+        <image name="next" width="42" height="24"/>
+        <image name="progressBar" width="240" height="212"/>
     </resources>
 </document>
