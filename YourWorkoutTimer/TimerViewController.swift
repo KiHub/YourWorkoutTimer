@@ -33,7 +33,7 @@ class TimerViewController: UIViewController {
         trackLayer.fillColor = UIColor.clear.cgColor
         trackLayer.lineCap = .round
         view.layer.addSublayer(trackLayer)
-        trackLayer.position = view.center
+     //   trackLayer.position = view.center
         
        // pulsatingLayer = CAShapeLayer()
         pulsatingLayer.path = circularPath.cgPath
@@ -41,7 +41,7 @@ class TimerViewController: UIViewController {
         pulsatingLayer.lineWidth = 10
         pulsatingLayer.fillColor = UIColor.yellow.cgColor
         pulsatingLayer.lineCap = .round
-        pulsatingLayer.position = view.center
+     //   pulsatingLayer.position = view.center
         view.layer.addSublayer(pulsatingLayer)
         
 //        let circularPath = UIBezierPath(arcCenter: center, radius: 100,
