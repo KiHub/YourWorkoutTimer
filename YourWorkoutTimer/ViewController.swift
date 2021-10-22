@@ -25,6 +25,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     var selectedRestTime: String?
     var selectedRepeatTime: String?
     
+    @IBOutlet weak var startButtonOutlet: UIButton!
     
     
     
@@ -40,6 +41,8 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     
     override func viewDidLoad() {
         super.viewDidLoad()
+       
+       
         changeColors()
     
        
@@ -49,11 +52,17 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
        
         let tapGestureRecognizer: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(ViewController.dismissKeyboard))
             view.addGestureRecognizer(tapGestureRecognizer)
-        
-        
+       
+       
         
     }
     
+//    func showStartButton() {
+//        if workTextField.text != "" && restTextField.text != "" && repeatTextField.text != "" {
+//            startButtonOutlet.isHidden = false
+//
+//        }
+//    }
  
     
     func choiseWorkTime()  {
@@ -68,6 +77,8 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         //workPicker.layer.shadowColor = #colorLiteral(red: 0.05882352963, green: 0.180392161, blue: 0.2470588237, alpha: 1)
         self.workTextField.tintColor = .clear
         
+
+
         
     }
     
@@ -90,6 +101,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         repeatPicker.tag = 3
         repeatPicker.layer.backgroundColor = #colorLiteral(red: 0.1882352941, green: 0.2666666667, blue: 0.3058823529, alpha: 1)
         self.repeatTextField.tintColor = .clear
+        
     }
 
     func changeColors() {

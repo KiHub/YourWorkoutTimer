@@ -88,6 +88,7 @@
                     <connections>
                         <outlet property="repeatTextField" destination="5qx-3j-LzX" id="AaB-cn-BBv"/>
                         <outlet property="restTextField" destination="vTJ-fz-4Xv" id="Gc6-kp-91N"/>
+                        <outlet property="startButtonOutlet" destination="41p-6V-WXS" id="FuZ-Bv-gai"/>
                         <outlet property="workTextField" destination="n0n-SR-NKU" id="pGe-Ua-tUD"/>
                     </connections>
                 </viewController>
