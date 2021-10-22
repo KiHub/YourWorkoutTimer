@@ -16,6 +16,11 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     var timeArrayForWork = ["10s", "20s", "30s", "40s", "50s" , "1m", "2m", "3m", "4m", "5m"]
     var repeatTimes = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15"]
     
+
+    
+  
+    
+    
     var selectedWorkTime: String?
     var selectedRestTime: String?
     var selectedRepeatTime: String?
@@ -42,13 +47,14 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         choiseRestTime()
         choiseRepeatTime()
        
-        
+        let tapGestureRecognizer: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(ViewController.dismissKeyboard))
+            view.addGestureRecognizer(tapGestureRecognizer)
         
         
         
     }
     
-    
+ 
     
     func choiseWorkTime()  {
         let workPicker = UIPickerView()
@@ -56,6 +62,10 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         workTextField.inputView = workPicker
         workPicker.tag = 1
         workPicker.layer.backgroundColor = #colorLiteral(red: 0.1882352941, green: 0.2666666667, blue: 0.3058823529, alpha: 1)
+       // workPicker.layer.cornerRadius = UIScreen.main.bounds.width / 10
+        //workPicker.layer.
+       // workPicker.layer.masksToBounds = false
+        //workPicker.layer.shadowColor = #colorLiteral(red: 0.05882352963, green: 0.180392161, blue: 0.2470588237, alpha: 1)
         self.workTextField.tintColor = .clear
         
         
@@ -69,6 +79,8 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         restPicker.tag = 2
         restPicker.layer.backgroundColor = #colorLiteral(red: 0.1882352941, green: 0.2666666667, blue: 0.3058823529, alpha: 1)
         self.restTextField.tintColor = .clear
+        
+        
     }
     
     func choiseRepeatTime()  {
@@ -77,7 +89,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         repeatTextField.inputView = repeatPicker
         repeatPicker.tag = 3
         repeatPicker.layer.backgroundColor = #colorLiteral(red: 0.1882352941, green: 0.2666666667, blue: 0.3058823529, alpha: 1)
-        self.restTextField.tintColor = .clear
+        self.repeatTextField.tintColor = .clear
     }
 
     func changeColors() {
@@ -244,5 +256,18 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
 //        //
 //    }
 
+}
+
+extension ViewController {
+    func hideKeyboardWhenTappedAround() {
+        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(ViewController.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
 }
 
