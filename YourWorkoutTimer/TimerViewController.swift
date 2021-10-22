@@ -11,6 +11,9 @@ class TimerViewController: UIViewController {
 
     let shapeLayer = CAShapeLayer()
     
+    //var pulsatingLayer: CAShapeLayer!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -18,6 +21,8 @@ class TimerViewController: UIViewController {
         
         // create track layer
         let trackLayer = CAShapeLayer()
+        
+        let pulsatingLayer = CAShapeLayer()
         
         let circularPath = UIBezierPath(arcCenter: center, radius: 100,
                                         startAngle: -CGFloat.pi / 2, endAngle: 2 * CGFloat.pi, clockwise: true)
@@ -28,7 +33,16 @@ class TimerViewController: UIViewController {
         trackLayer.fillColor = UIColor.clear.cgColor
         trackLayer.lineCap = .round
         view.layer.addSublayer(trackLayer)
+        trackLayer.position = view.center
         
+       // pulsatingLayer = CAShapeLayer()
+        pulsatingLayer.path = circularPath.cgPath
+        pulsatingLayer.strokeColor = UIColor.clear.cgColor
+        pulsatingLayer.lineWidth = 10
+        pulsatingLayer.fillColor = UIColor.yellow.cgColor
+        pulsatingLayer.lineCap = .round
+        pulsatingLayer.position = view.center
+        view.layer.addSublayer(pulsatingLayer)
         
 //        let circularPath = UIBezierPath(arcCenter: center, radius: 100,
 //                                        startAngle: -CGFloat.pi / 2, endAngle: 2 * CGFloat.pi, clockwise: true)
