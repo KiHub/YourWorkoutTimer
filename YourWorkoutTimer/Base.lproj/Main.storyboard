@@ -96,10 +96,10 @@
             </objects>
             <point key="canvasLocation" x="55" y="79"/>
         </scene>
-        <!--View Controller-->
+        <!--Timer View Controller-->
         <scene sceneID="MyM-4l-eay">
             <objects>
-                <viewController id="Fqy-Sq-4Vc" customClass="ViewController" customModule="YourWorkoutTimer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Fqy-Sq-4Vc" customClass="TimerViewController" customModule="YourWorkoutTimer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="UIa-9E-OsU">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -136,7 +136,7 @@
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ff7-ED-SM7"/>
-                        <color key="backgroundColor" red="0.1333333333" green="0.20392156859999999" blue="0.23529411759999999" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.18823529411764706" green="0.26666666666666666" blue="0.30588235294117649" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="ff7-ED-SM7" firstAttribute="bottom" secondItem="4RZ-Bc-itL" secondAttribute="bottom" constant="60" id="I4e-ud-3hi"/>
                             <constraint firstItem="bYT-BY-7ZU" firstAttribute="centerY" secondItem="UIa-9E-OsU" secondAttribute="centerY" id="Iqs-xQ-kng"/>
@@ -182,7 +182,7 @@
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="tBs-B9-t6A"/>
-                        <color key="backgroundColor" red="0.1333333333" green="0.20392156859999999" blue="0.23529411759999999" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.18823529411764706" green="0.26666666666666666" blue="0.30588235294117649" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="M54-3K-XeF" firstAttribute="leading" secondItem="tBs-B9-t6A" secondAttribute="leading" constant="157" id="0BT-F4-Jcn"/>
                             <constraint firstItem="bXX-ZQ-Udm" firstAttribute="centerX" secondItem="84J-7n-jRG" secondAttribute="centerX" id="3fa-3v-g5e"/>

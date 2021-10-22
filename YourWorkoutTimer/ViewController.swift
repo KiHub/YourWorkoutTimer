@@ -43,6 +43,8 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         super.viewDidLoad()
        
        
+        
+       
         changeColors()
     
        
