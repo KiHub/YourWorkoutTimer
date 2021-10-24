@@ -292,7 +292,18 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     
     @IBAction func cancelAction(_ segue: UIStoryboardSegue) {}
 
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let tvc = segue.destination as? TimerViewController else {return}
+        tvc.timerWorkDuration = selectedWorkTime
+        
+        
+    }
+    
 }
+
+            
+
 
 extension ViewController {
     func hideKeyboardWhenTappedAround() {

@@ -16,6 +16,8 @@ class TimerViewController: UIViewController {
     
     var timerWorkDuration = 10
     var timerRestDuration = 5
+    var timerRepeatDuration = 5
+    
     
     
     
