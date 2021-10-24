@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Fqy-Sq-4Vc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -68,7 +68,8 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="70"/>
                                                 <state key="normal" image="GroupStartTimer"/>
                                                 <connections>
-                                                    <action selector="startButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pC4-WE-HHe"/>
+                                                    <action selector="startButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="q95-3p-Rsf"/>
+                                                    <segue destination="Fqy-Sq-4Vc" kind="presentation" modalPresentationStyle="fullScreen" id="utL-w2-ogK"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -105,11 +106,29 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bYT-BY-7ZU">
-                                <rect key="frame" x="180.5" y="413" width="53.5" height="70"/>
-                                <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="51"/>
+                                <rect key="frame" x="168" y="400" width="78" height="96"/>
+                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="70"/>
                                 <color key="textColor" red="0.72549019609999998" green="0.77647058820000003" blue="0.81568627449999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="aRV-1z-Sr6">
+                                <rect key="frame" x="30" y="702" width="354" height="100"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gms-H1-0ny" userLabel="backButton">
+                                        <rect key="frame" x="127" y="0.0" width="100" height="100"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="100" id="bx5-22-ZsP"/>
+                                            <constraint firstAttribute="width" constant="100" id="llx-vT-YVn"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="70"/>
+                                        <state key="normal" image="Restart"/>
+                                        <connections>
+                                            <action selector="backButton:" destination="Fqy-Sq-4Vc" eventType="touchUpInside" id="m1i-f1-2Cw"/>
+                                            <segue destination="4Ys-hb-UFp" kind="unwind" unwindAction="cancelAction:" id="3yC-q4-vdR"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="4RZ-Bc-itL">
                                 <rect key="frame" x="30" y="706" width="354" height="96"/>
                                 <subviews>
@@ -138,23 +157,29 @@
                         <viewLayoutGuide key="safeArea" id="ff7-ED-SM7"/>
                         <color key="backgroundColor" red="0.18823529411764706" green="0.26666666666666666" blue="0.30588235294117649" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="ff7-ED-SM7" firstAttribute="bottom" secondItem="aRV-1z-Sr6" secondAttribute="bottom" constant="60" id="CWi-wp-Giu"/>
+                            <constraint firstItem="ff7-ED-SM7" firstAttribute="trailing" secondItem="aRV-1z-Sr6" secondAttribute="trailing" constant="30" id="EaG-6V-r05"/>
                             <constraint firstItem="ff7-ED-SM7" firstAttribute="bottom" secondItem="4RZ-Bc-itL" secondAttribute="bottom" constant="60" id="I4e-ud-3hi"/>
                             <constraint firstItem="bYT-BY-7ZU" firstAttribute="centerY" secondItem="UIa-9E-OsU" secondAttribute="centerY" id="Iqs-xQ-kng"/>
+                            <constraint firstItem="aRV-1z-Sr6" firstAttribute="leading" secondItem="ff7-ED-SM7" secondAttribute="leading" constant="30" id="LqC-cC-ZYl"/>
                             <constraint firstItem="ff7-ED-SM7" firstAttribute="trailing" secondItem="4RZ-Bc-itL" secondAttribute="trailing" constant="30" id="VOv-uj-DTR"/>
                             <constraint firstItem="4RZ-Bc-itL" firstAttribute="leading" secondItem="ff7-ED-SM7" secondAttribute="leading" constant="30" id="j4M-CF-5eN"/>
                             <constraint firstItem="bYT-BY-7ZU" firstAttribute="centerX" secondItem="UIa-9E-OsU" secondAttribute="centerX" id="tvx-Vn-Y0D"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
+                                <exclude reference="4RZ-Bc-itL"/>
                                 <exclude reference="bYt-lc-cNs"/>
                             </mask>
                         </variation>
                     </view>
+                    <navigationItem key="navigationItem" id="vgt-pu-dGi"/>
                     <connections>
                         <outlet property="timerLabel" destination="bYT-BY-7ZU" id="FFx-fx-kmj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xPl-sd-37V" sceneMemberID="firstResponder"/>
+                <exit id="4Ys-hb-UFp" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="828.98550724637687" y="71.651785714285708"/>
         </scene>

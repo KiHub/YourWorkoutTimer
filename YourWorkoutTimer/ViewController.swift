@@ -42,7 +42,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     override func viewDidLoad() {
         super.viewDidLoad()
        
-       
+       // startButtonOutlet.isEnabled = false
         
        
         changeColors()
@@ -55,7 +55,12 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         let tapGestureRecognizer: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(ViewController.dismissKeyboard))
             view.addGestureRecognizer(tapGestureRecognizer)
        
+        
        
+        print(selectedWorkTime)
+        print(selectedRestTime)
+        print(selectedRepeatTime)
+        
         
     }
     
@@ -66,6 +71,8 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
 //        }
 //    }
  
+    @IBAction func startButton(_ sender: Any) {
+    }
     
     func choiseWorkTime()  {
         let workPicker = UIPickerView()
@@ -185,7 +192,15 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
                 default:
                      return
                 }
-        
+            
+        if workTextField.text?.isEmpty == true  && restTextField.text?.isEmpty == true && repeatTextField.text?.isEmpty == true {
+            startButtonOutlet.isEnabled = false
+            print("yes")
+            
+        } else {
+            startButtonOutlet.isEnabled = true
+            print("no")
+        }
         
         
 //        if pickerView.tag == 3 {
@@ -202,8 +217,13 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     
    
 
-    @IBAction func startButton(_ sender: UIButton) {
-    }
+            
+        
+        
+        
+        
+    
+    
     
     func hexStringToUIColor (hex:String) -> UIColor {
         var cString:String = hex.trimmingCharacters(in: .whitespacesAndNewlines).uppercased()
@@ -269,6 +289,8 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
 //     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
 //        //
 //    }
+    
+    @IBAction func cancelAction(_ segue: UIStoryboardSegue) {}
 
 }
 

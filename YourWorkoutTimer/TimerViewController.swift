@@ -11,7 +11,22 @@ class TimerViewController: UIViewController {
 
     let shapeLayer = CAShapeLayer()
     
-    //let pulsatingLayer = CAShapeLayer()
+    var timerWork: Timer?
+    var timerRest: Timer?
+    
+    var timerWorkDuration = 10
+    var timerRestDuration = 5
+    
+    
+    
+    
+    
+//    var pulsatingLayer = CAShapeLayer()
+    
+//    override func viewDidLayoutSubviews() {
+//        super.viewDidLayoutSubviews()
+//        self.animatePulsatingLayer()
+//    }
     
     //var pulsatingLayer: CAShapeLayer!
     
@@ -24,6 +39,8 @@ class TimerViewController: UIViewController {
         
         // create track layer
         let trackLayer = CAShapeLayer()
+        
+        timerLabel.text = String(timerWorkDuration)
         
        
         
@@ -42,7 +59,7 @@ class TimerViewController: UIViewController {
       
         
         
-       // pulsatingLayer = CAShapeLayer()
+//        pulsatingLayer = CAShapeLayer()
 //        pulsatingLayer.path = circularPath.cgPath
 //        pulsatingLayer.strokeColor = UIColor.clear.cgColor
 //        pulsatingLayer.lineWidth = 10
@@ -70,8 +87,17 @@ class TimerViewController: UIViewController {
         timerLabel.center = view.center
         
         
+        timerWork = Timer()
+        
+        
     }
-//    
+    
+    
+    @IBAction func backButton(_ sender: Any) {
+    }
+    
+ 
+//
 //    private func animatePulsatingLayer() {
 //        let animation = CABasicAnimation(keyPath: "transform.scale")
 //        animation.fromValue = 1
@@ -79,24 +105,42 @@ class TimerViewController: UIViewController {
 //        animation.duration = 5
 //        //animation.
 //       // animation
-//        
+//
 //        pulsatingLayer.add(animation, forKey: "pulsing")
-//        
-      //  pulsatingLayer.add(animation, forKey: "pulsing")
+//
+     //   pulsatingLayer.add(animation, forKey: "pulsing")
         
         
-   // }
+//    }
     
     @objc private func handleTap() {
         print("Hello")
         let basicAnimation = CABasicAnimation(keyPath: "strokeEnd")
+      //  basicAnimation.fromValue =
         basicAnimation.toValue = 1
-        basicAnimation.duration = 2
+        basicAnimation.duration = CFTimeInterval(timerWorkDuration + 2)
         basicAnimation.fillMode = CAMediaTimingFillMode.forwards
         basicAnimation.isRemovedOnCompletion = false
        
         
+        
         shapeLayer.add(basicAnimation, forKey: "urSoBasic")
+        
+        timerWork = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timerAction), userInfo: nil, repeats: true)
+        
+    }
+        @objc func timerAction() {
+            
+            timerWorkDuration -= 1
+            timerLabel.text = "\(timerWorkDuration)"
+            print(timerWorkDuration)
+            
+            if timerWorkDuration == 0 {
+                timerWork?.invalidate()
+                timerLabel.text = "Done!"
+            }
+            
+        }
   
 }
-}
+
