@@ -150,6 +150,9 @@
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="timerLabel" destination="bYT-BY-7ZU" id="FFx-fx-kmj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xPl-sd-37V" sceneMemberID="firstResponder"/>
             </objects>

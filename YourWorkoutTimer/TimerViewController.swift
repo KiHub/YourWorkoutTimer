@@ -11,8 +11,11 @@ class TimerViewController: UIViewController {
 
     let shapeLayer = CAShapeLayer()
     
+    //let pulsatingLayer = CAShapeLayer()
+    
     //var pulsatingLayer: CAShapeLayer!
     
+    @IBOutlet weak var timerLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,7 +25,7 @@ class TimerViewController: UIViewController {
         // create track layer
         let trackLayer = CAShapeLayer()
         
-        let pulsatingLayer = CAShapeLayer()
+       
         
         let circularPath = UIBezierPath(arcCenter: center, radius: 100,
                                         startAngle: -CGFloat.pi / 2, endAngle: 2 * CGFloat.pi, clockwise: true)
@@ -33,16 +36,23 @@ class TimerViewController: UIViewController {
         trackLayer.fillColor = UIColor.clear.cgColor
         trackLayer.lineCap = .round
         view.layer.addSublayer(trackLayer)
-     //   trackLayer.position = view.center
+       // trackLayer.position = view.center
+        //trackLayer.anchorPoint = .zero
+        
+      
+        
         
        // pulsatingLayer = CAShapeLayer()
-        pulsatingLayer.path = circularPath.cgPath
-        pulsatingLayer.strokeColor = UIColor.clear.cgColor
-        pulsatingLayer.lineWidth = 10
-        pulsatingLayer.fillColor = UIColor.yellow.cgColor
-        pulsatingLayer.lineCap = .round
-     //   pulsatingLayer.position = view.center
-        view.layer.addSublayer(pulsatingLayer)
+//        pulsatingLayer.path = circularPath.cgPath
+//        pulsatingLayer.strokeColor = UIColor.clear.cgColor
+//        pulsatingLayer.lineWidth = 10
+//        pulsatingLayer.fillColor = UIColor.yellow.cgColor
+//        pulsatingLayer.lineCap = .round
+//     //pulsatingLayer.position = view.center
+//        view.layer.addSublayer(pulsatingLayer)
+//        //pulsatingLayer.anchorPoint = .zero
+        
+       // animatePulsatingLayer()
         
 //        let circularPath = UIBezierPath(arcCenter: center, radius: 100,
 //                                        startAngle: -CGFloat.pi / 2, endAngle: 2 * CGFloat.pi, clockwise: true)
@@ -54,9 +64,28 @@ class TimerViewController: UIViewController {
         shapeLayer.lineCap = .round
         view.layer.addSublayer(shapeLayer)
         view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleTap)))
-
+        
+        view.addSubview(timerLabel)
+        timerLabel.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
+        timerLabel.center = view.center
+        
         
     }
+//    
+//    private func animatePulsatingLayer() {
+//        let animation = CABasicAnimation(keyPath: "transform.scale")
+//        animation.fromValue = 1
+//        animation.toValue = 2
+//        animation.duration = 5
+//        //animation.
+//       // animation
+//        
+//        pulsatingLayer.add(animation, forKey: "pulsing")
+//        
+      //  pulsatingLayer.add(animation, forKey: "pulsing")
+        
+        
+   // }
     
     @objc private func handleTap() {
         print("Hello")
