@@ -12,18 +12,18 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     
     
     
-    var timeArray = ["10s", "20s", "30s", "40s", "50s" , "1m", "2m", "3m", "4m", "5m"]
-    var timeArrayForWork = ["10s", "20s", "30s", "40s", "50s" , "1m", "2m", "3m", "4m", "5m"]
-    var repeatTimes = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15"]
+    var timeArray = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120]
+    var timeArrayForWork = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120]
+    var repeatTimes = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
     
 
     
   
     
     
-    var selectedWorkTime: String?
-    var selectedRestTime: String?
-    var selectedRepeatTime: String?
+    var selectedWorkTime: Int?
+    var selectedRestTime: Int?
+    var selectedRepeatTime: Int?
     
     @IBOutlet weak var startButtonOutlet: UIButton!
     
@@ -42,7 +42,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     override func viewDidLoad() {
         super.viewDidLoad()
        
-       // startButtonOutlet.isEnabled = false
+        startButtonOutlet.isEnabled = false
         
        
         changeColors()
@@ -56,6 +56,14 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
             view.addGestureRecognizer(tapGestureRecognizer)
        
         
+//        if workTextField.text?.isEmpty != false  && restTextField.text?.isEmpty != false && repeatTextField.text?.isEmpty != false {
+//            startButtonOutlet.isEnabled = false
+//            print("yes")
+//
+//        } else {
+//            startButtonOutlet.isEnabled = true
+//            print("no")
+//        }
        
         print(selectedWorkTime)
         print(selectedRestTime)
@@ -161,11 +169,11 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         
         switch pickerView.tag {
         case 1:
-            return timeArrayForWork[row]
+            return String(timeArrayForWork[row]) + " seconds"
         case 2:
-            return timeArray[row]
+            return String(timeArray[row]) + " seconds"
         case 3:
-            return repeatTimes[row]
+            return String(repeatTimes[row])
         default:
             return "No data"
         }
@@ -179,26 +187,26 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         switch pickerView.tag {
                 case 1:
                     selectedWorkTime = timeArrayForWork[row]
-                    workTextField.text = selectedWorkTime
+                    workTextField.text = String(selectedWorkTime!)
                     workTextField.resignFirstResponder()
                 case 2:
                     selectedRestTime = timeArray[row]
-                    restTextField.text = selectedRestTime
+                    restTextField.text = String(selectedRestTime!)
                     restTextField.resignFirstResponder()
                 case 3:
                     selectedRepeatTime = repeatTimes[row]
-                    repeatTextField.text = selectedRepeatTime
+                    repeatTextField.text = String(selectedRepeatTime!)
                     repeatTextField.resignFirstResponder()
                 default:
                      return
                 }
             
-        if workTextField.text?.isEmpty == true  && restTextField.text?.isEmpty == true && repeatTextField.text?.isEmpty == true {
-            startButtonOutlet.isEnabled = false
+        if workTextField.text != ""  && restTextField.text != "" && repeatTextField.text != "" {
+            startButtonOutlet.isEnabled = true
             print("yes")
             
         } else {
-            startButtonOutlet.isEnabled = true
+            startButtonOutlet.isEnabled = false
             print("no")
         }
         
@@ -295,7 +303,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let tvc = segue.destination as? TimerViewController else {return}
-        tvc.timerWorkDuration = selectedWorkTime
+        tvc.timerWorkDuration = selectedWorkTime!
         
         
     }
