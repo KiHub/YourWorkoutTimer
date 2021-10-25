@@ -12,8 +12,8 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     
     
     
-    var timeArray = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120]
-    var timeArrayForWork = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120]
+    var timeArray = [5, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120]
+    var timeArrayForWork = [5, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120]
     var repeatTimes = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
     
 
@@ -304,6 +304,8 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let tvc = segue.destination as? TimerViewController else {return}
         tvc.timerWorkDuration = selectedWorkTime!
+        tvc.timerRestDuration = selectedRestTime!
+        tvc.timerRepeatDuration = selectedRepeatTime!
         
         
     }
