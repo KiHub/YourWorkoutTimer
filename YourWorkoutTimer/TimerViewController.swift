@@ -15,9 +15,9 @@ class TimerViewController: UIViewController {
     var timerWork: Timer?
     var timerRest: Timer?
     
-    var timerWorkDuration = 10
-    var timerRestDuration = 5
-    var timerRepeatDuration = 5
+    var timerWorkDuration: UInt = 10
+    var timerRestDuration: UInt = 5
+    var timerRepeatDuration: UInt = 5
     
     
     
@@ -88,28 +88,51 @@ class TimerViewController: UIViewController {
     
  
     func timerLogic() {
-        while timerRepeatDuration > 0 {
+        print("Repeat",timerRepeatDuration)
+        
+        while timerRepeatDuration != 0 {
             timerWork = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timerAction), userInfo: nil, repeats: true)
-            
             let basicAnimation = CABasicAnimation(keyPath: "strokeEnd")
-          //  basicAnimation.fromValue = timerWorkDuration
             basicAnimation.toValue = 1
             basicAnimation.duration = CFTimeInterval(timerWorkDuration)
             basicAnimation.fillMode = CAMediaTimingFillMode.forwards
             basicAnimation.isRemovedOnCompletion = false
             shapeLayer.add(basicAnimation, forKey: "urSoBasic")
             
-            
-            
+            timerRepeatDuration -= 1
+            print("Repeat",timerRepeatDuration)
+
 //            if <#condition#> {
 //                <#statements#>
 //            } else {
 //                <#statements#>
 //            }
             
-            
-            timerRepeatDuration -= 1
         }
+//        } else {
+//            dismiss(animated: true)
+//        }
+        
+     
+        
+        
+        
+        
+//        while timerRepeatDuration > 0 {
+//            timerWork = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timerAction), userInfo: nil, repeats: true)
+//            let basicAnimation = CABasicAnimation(keyPath: "strokeEnd")
+//            basicAnimation.toValue = 1
+//            basicAnimation.duration = CFTimeInterval(timerWorkDuration)
+//            basicAnimation.fillMode = CAMediaTimingFillMode.forwards
+//            basicAnimation.isRemovedOnCompletion = false
+//            shapeLayer.add(basicAnimation, forKey: "urSoBasic")
+//
+//
+//
+//
+//
+//            timerRepeatDuration -= 1
+//        }
             
            
         
@@ -118,11 +141,11 @@ class TimerViewController: UIViewController {
     
 
     
-    @objc private func handleTap() {
-        print("Hello")
-        
-        
-    }
+//    @objc private func handleTap() {
+//        print("Hello")
+//
+//
+//    }
         @objc func timerAction() {
             
             timerWorkDuration -= 1

@@ -21,9 +21,9 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
   
     
     
-    var selectedWorkTime: Int?
-    var selectedRestTime: Int?
-    var selectedRepeatTime: Int?
+    var selectedWorkTime: UInt?
+    var selectedRestTime: UInt?
+    var selectedRepeatTime: UInt?
     
     @IBOutlet weak var startButtonOutlet: UIButton!
     
@@ -186,15 +186,15 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         
         switch pickerView.tag {
                 case 1:
-                    selectedWorkTime = timeArrayForWork[row]
+                    selectedWorkTime = UInt(timeArrayForWork[row])
                     workTextField.text = String(selectedWorkTime!)
                     workTextField.resignFirstResponder()
                 case 2:
-                    selectedRestTime = timeArray[row]
+                    selectedRestTime = UInt(timeArray[row])
                     restTextField.text = String(selectedRestTime!)
                     restTextField.resignFirstResponder()
                 case 3:
-                    selectedRepeatTime = repeatTimes[row]
+                    selectedRepeatTime = UInt(repeatTimes[row])
                     repeatTextField.text = String(selectedRepeatTime!)
                     repeatTextField.resignFirstResponder()
                 default:
