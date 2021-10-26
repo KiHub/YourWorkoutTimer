@@ -1,13 +1,13 @@
 //
-//  TimerViewController.swift
+//  ReserveViewController.swift
 //  YourWorkoutTimer
 //
-//  Created by  Mr.Ki on 22.10.2021.
+//  Created by  Mr.Ki on 26.10.2021.
 //
 
 import UIKit
 
-class TimerViewController: UIViewController {
+class ReserveViewController: UIViewController {
 
     let shapeLayer = CAShapeLayer()
     let shapeLayerRest = CAShapeLayer()
@@ -18,9 +18,6 @@ class TimerViewController: UIViewController {
     var timerWorkDuration: UInt = 10
     var timerRestDuration: UInt = 5
     var timerRepeatDuration: UInt = 5
-    
-    var timer = Timer()
-    
     
     
     
@@ -33,7 +30,6 @@ class TimerViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        timer.invalidate()
         
         let center = view.center
         
@@ -76,33 +72,9 @@ class TimerViewController: UIViewController {
         timerLabel.center = view.center
         
         
-       // timerWork = Timer()
+        timerWork = Timer()
         
-      //  timerLogic()
-        
-        var circleRepeats = 0
-        
-//        for <#item#> in circleRepeats {
-//            <#code#>
-//        }
-//
-//        while circleRepeats > 0 {
-//            timerLogic()
-//            circleRepeats -= 1
-//        }
-        
-        var delay = timerWorkDuration
-        
-        repeat {
-            timerLogic()
-            Timer.scheduledTimer(withTimeInterval: TimeInterval(delay), repeats: false) {_ in
-                self.timerTwoLogic()
-            }
-            circleRepeats += 1
-            
-        } while circleRepeats != timerRepeatDuration
-        
-        
+        timerLogic()
         
         
     }
@@ -111,7 +83,6 @@ class TimerViewController: UIViewController {
     @IBAction func backButton(_ sender: Any) {
         timerWork?.invalidate()
         timerRest?.invalidate()
-        dismiss(animated: true)
         
     }
     
@@ -119,37 +90,53 @@ class TimerViewController: UIViewController {
     func timerLogic() {
         print("Repeat",timerRepeatDuration)
         
-       
-            timerWork = Timer.scheduledTimer(timeInterval: 0, target: self, selector: #selector(timerAction), userInfo: nil, repeats: true)
-        
+        while timerRepeatDuration != 0 {
+            timerWork = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timerAction), userInfo: nil, repeats: true)
             let basicAnimation = CABasicAnimation(keyPath: "strokeEnd")
             basicAnimation.toValue = 1
             basicAnimation.duration = CFTimeInterval(timerWorkDuration)
             basicAnimation.fillMode = CAMediaTimingFillMode.forwards
             basicAnimation.isRemovedOnCompletion = false
             shapeLayer.add(basicAnimation, forKey: "urSoBasic")
-     
-        
-    }
-    
-    func timerTwoLogic()  {
-        
-        
-        timerRest = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timerActionRest), userInfo: nil, repeats: true)
-       
-    
             
-            
-                let basicAnimation = CABasicAnimation(keyPath: "strokeEnd")
-                basicAnimation.toValue = 1
-                basicAnimation.duration = CFTimeInterval(timerRestDuration)
-                basicAnimation.fillMode = CAMediaTimingFillMode.forwards
-                basicAnimation.isRemovedOnCompletion = false
-                shapeLayerRest.add(basicAnimation, forKey: "urSoBasic")
+            timerRepeatDuration -= 1
+            print("Repeat",timerRepeatDuration)
 
+//            if <#condition#> {
+//                <#statements#>
+//            } else {
+//                <#statements#>
+//            }
+            
+        }
+//        } else {
+//            dismiss(animated: true)
+//        }
         
+       
+        
+        
+        
+//        while timerRepeatDuration > 0 {
+//            timerWork = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timerAction), userInfo: nil, repeats: true)
+//            let basicAnimation = CABasicAnimation(keyPath: "strokeEnd")
+//            basicAnimation.toValue = 1
+//            basicAnimation.duration = CFTimeInterval(timerWorkDuration)
+//            basicAnimation.fillMode = CAMediaTimingFillMode.forwards
+//            basicAnimation.isRemovedOnCompletion = false
+//            shapeLayer.add(basicAnimation, forKey: "urSoBasic")
+//
+//
+//
+//
+//
+//            timerRepeatDuration -= 1
+//        }
+            
+           
         
     }
+    
     
 
     
@@ -160,52 +147,46 @@ class TimerViewController: UIViewController {
 //    }
         @objc func timerAction() {
             
-            var timerTempraryWorkDuration = timerWorkDuration
+            timerWorkDuration -= 1
+            timerLabel.text = "\(timerWorkDuration)"
+            print(timerWorkDuration)
             
-            timerTempraryWorkDuration -= 1
-            timerLabel.text = String(timerTempraryWorkDuration)
-            print(timerTempraryWorkDuration)
-            
-            if timerTempraryWorkDuration == 0 {
+            if timerWorkDuration == 0 {
                 timerWork?.invalidate()
                // timerLabel.text = "􀷝"
-              //  timerWork = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timerActionRest), userInfo: nil, repeats: true)
+                timerWork = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timerActionRest), userInfo: nil, repeats: true)
                 
-//                let basicAnimation = CABasicAnimation(keyPath: "strokeEnd")
-//              //  basicAnimation.fromValue = timerWorkDuration
-//                basicAnimation.toValue = 1
-//                basicAnimation.duration = CFTimeInterval(timerRestDuration)
-//                basicAnimation.fillMode = CAMediaTimingFillMode.forwards
-//                basicAnimation.isRemovedOnCompletion = false
-//                shapeLayerRest.add(basicAnimation, forKey: "urSoBasic")
-//                if timerRestDuration == 0 {
-//                    shapeLayerRest.isHidden = true
-//                    //timerLogic()
+                let basicAnimation = CABasicAnimation(keyPath: "strokeEnd")
+              //  basicAnimation.fromValue = timerWorkDuration
+                basicAnimation.toValue = 1
+                basicAnimation.duration = CFTimeInterval(timerRestDuration)
+                basicAnimation.fillMode = CAMediaTimingFillMode.forwards
+                basicAnimation.isRemovedOnCompletion = false
+                shapeLayerRest.add(basicAnimation, forKey: "urSoBasic")
+                if timerRestDuration == 0 {
+                    shapeLayerRest.isHidden = true
+                    //timerLogic()
                 }
                 
                 
             }
             
-        
+        }
     
     @objc func timerActionRest() {
         
-        var timerTempraryRestDuration = timerRestDuration
+        timerRestDuration -= 1
+        timerLabel.text = "\(timerRestDuration)"
+        print(timerRestDuration)
         
-        
-        timerTempraryRestDuration -= 1
-        timerLabel.text = String(timerTempraryRestDuration)
-        print(timerTempraryRestDuration)
-        
-        if timerTempraryRestDuration == 0 {
+        if timerRestDuration == 0 {
             timerRest?.invalidate()
             timerLabel.text = "Done!"
-//            timerWork?.invalidate()
-//            dismiss(animated: true)
+            timerWork?.invalidate()
+            dismiss(animated: true)
             
         }
         
     }
   
 }
-
