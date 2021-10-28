@@ -21,6 +21,7 @@ class TimerViewController: UIViewController {
     
     var timer = Timer()
     
+   
     
     
     
@@ -34,13 +35,19 @@ class TimerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         timer.invalidate()
+        timerLabel.text = ""
+        
+        let delay = timerWorkDuration
+        let delayTwo = timerRepeatDuration
+        
         
         let center = view.center
         
         // create track layer
         let trackLayer = CAShapeLayer()
         
-        timerLabel.text = String(timerWorkDuration)
+       // timerLabel.text = String(timerWorkDuration)
+        
         
        
         
@@ -91,16 +98,23 @@ class TimerViewController: UIViewController {
 //            circleRepeats -= 1
 //        }
         
-        var delay = timerWorkDuration
+     //  let delay = timerWorkDuration
         
         repeat {
             timerLogic()
+            
             Timer.scheduledTimer(withTimeInterval: TimeInterval(delay), repeats: false) {_ in
                 self.timerTwoLogic()
+                
             }
-            circleRepeats += 1
+            Timer.scheduledTimer(withTimeInterval: TimeInterval(delayTwo), repeats: false) {_ in
+                circleRepeats += 1
+                print(circleRepeats)
+                
+            }
+           
             
-        } while circleRepeats != timerRepeatDuration
+        } while circleRepeats == timerRepeatDuration
         
         
         
@@ -120,7 +134,8 @@ class TimerViewController: UIViewController {
         print("Repeat",timerRepeatDuration)
         
        
-            timerWork = Timer.scheduledTimer(timeInterval: 0, target: self, selector: #selector(timerAction), userInfo: nil, repeats: true)
+            timerWork = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timerAction), userInfo: nil, repeats: true)
+       
         
             let basicAnimation = CABasicAnimation(keyPath: "strokeEnd")
             basicAnimation.toValue = 1
@@ -160,13 +175,13 @@ class TimerViewController: UIViewController {
 //    }
         @objc func timerAction() {
             
-            var timerTempraryWorkDuration = timerWorkDuration
+          //  var timerTempraryWorkDuration = timerWorkDuration
             
-            timerTempraryWorkDuration -= 1
-            timerLabel.text = String(timerTempraryWorkDuration)
-            print(timerTempraryWorkDuration)
+            timerWorkDuration -= 1
+            timerLabel.text = String(timerWorkDuration)
+            print(timerWorkDuration)
             
-            if timerTempraryWorkDuration == 0 {
+            if timerWorkDuration == 0 {
                 timerWork?.invalidate()
                // timerLabel.text = "􀷝"
               //  timerWork = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timerActionRest), userInfo: nil, repeats: true)
@@ -190,16 +205,16 @@ class TimerViewController: UIViewController {
     
     @objc func timerActionRest() {
         
-        var timerTempraryRestDuration = timerRestDuration
+       // var timerTempraryRestDuration = timerRestDuration
         
         
-        timerTempraryRestDuration -= 1
-        timerLabel.text = String(timerTempraryRestDuration)
-        print(timerTempraryRestDuration)
+        timerRestDuration -= 1
+        timerLabel.text = String(timerRestDuration)
+        print(timerRestDuration)
         
-        if timerTempraryRestDuration == 0 {
+        if timerRestDuration == 0 {
             timerRest?.invalidate()
-            timerLabel.text = "Done!"
+           // timerLabel.text = "Done!"
 //            timerWork?.invalidate()
 //            dismiss(animated: true)
             
