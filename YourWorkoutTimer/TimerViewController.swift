@@ -117,17 +117,15 @@ class TimerViewController: UIViewController {
 //        } while circleRepeats == timerRepeatDuration
         
         
-        if circleRepeats != timerRepeatDuration {
+        while circleRepeats != timerRepeatDuration {
+            
             timerLogic()
             
             Timer.scheduledTimer(withTimeInterval: TimeInterval(delay), repeats: false) {_ in
                 self.timerTwoLogic()
                 
             }
-            Timer.scheduledTimer(withTimeInterval: TimeInterval(delayTwo), repeats: false) {_ in
-                circleRepeats += 1
-                print(circleRepeats)
-        } 
+            circleRepeats += 1
         
         
         
